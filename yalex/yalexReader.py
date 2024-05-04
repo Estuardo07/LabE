@@ -398,7 +398,7 @@ def show_tree(postfix, nombre):
 TOKENS = {}
 
 
-def Yalex_reader(archivo):
+def yalexReader(archivo):
     # Abrir el archivo y guardar el contenido en una variable
     with open(archivo, "r") as file:
         content = file.read()
