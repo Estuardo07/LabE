@@ -1,60 +1,57 @@
 // SLR
 digraph {
-	0 [label="expression' -> . expression
-expression -> . term PLUS expression
-expression -> . term
-term -> . TIMES term
-term -> .
-term -> . LPAREN expression RPAREN
+	0 [label="s' -> . s
+s -> . A b d H
 " shape=square]
-	1 [label="expression' -> expression .
+	1 [label="s' -> s .
 " shape=square]
-	2 [label="expression -> term . PLUS expression
-expression -> term .
+	2 [label="s -> A . b d H
+b -> . C c
 " shape=square]
-	3 [label="term -> TIMES . term
-term -> . TIMES term
-term -> .
-term -> . LPAREN expression RPAREN
+	3 [label="s -> A b . d H
+d -> . e f
+e -> . G
+e -> .
 " shape=square]
-	4 [label="term -> LPAREN . expression RPAREN
-expression -> . term PLUS expression
-expression -> . term
-term -> . TIMES term
-term -> .
-term -> . LPAREN expression RPAREN
+	4 [label="b -> C . c
+c -> . B c
+c -> .
 " shape=square]
-	5 [label="expression -> term PLUS . expression
-expression -> . term PLUS expression
-expression -> . term
-term -> . TIMES term
-term -> .
-term -> . LPAREN expression RPAREN
+	5 [label="s -> A b d . H
 " shape=square]
-	6 [label="term -> TIMES term .
+	6 [label="d -> e . f
+f -> . F
+f -> .
 " shape=square]
-	7 [label="term -> LPAREN expression . RPAREN
+	7 [label="e -> G .
 " shape=square]
-	8 [label="expression -> term PLUS expression .
+	8 [label="b -> C c .
 " shape=square]
-	9 [label="term -> LPAREN expression RPAREN .
+	9 [label="c -> B . c
+c -> . B c
+c -> .
 " shape=square]
-	0 -> 1 [label=expression]
-	0 -> 2 [label=term]
-	0 -> 3 [label=TIMES]
-	0 -> 4 [label=LPAREN]
-	2 -> 5 [label=PLUS]
-	3 -> 6 [label=term]
-	3 -> 3 [label=TIMES]
-	3 -> 4 [label=LPAREN]
-	4 -> 7 [label=expression]
-	4 -> 2 [label=term]
-	4 -> 3 [label=TIMES]
-	4 -> 4 [label=LPAREN]
-	5 -> 8 [label=expression]
-	5 -> 2 [label=term]
-	5 -> 3 [label=TIMES]
-	5 -> 4 [label=LPAREN]
-	7 -> 9 [label=RPAREN]
+	10 [label="s -> A b d H .
+" shape=square]
+	11 [label="d -> e f .
+" shape=square]
+	12 [label="f -> F .
+" shape=square]
+	13 [label="c -> B c .
+" shape=square]
+	0 -> 1 [label=s]
+	0 -> 2 [label=A]
+	2 -> 3 [label=b]
+	2 -> 4 [label=C]
+	3 -> 5 [label=d]
+	3 -> 6 [label=e]
+	3 -> 7 [label=G]
+	4 -> 8 [label=c]
+	4 -> 9 [label=B]
+	5 -> 10 [label=H]
+	6 -> 11 [label=f]
+	6 -> 12 [label=F]
+	9 -> 13 [label=c]
+	9 -> 9 [label=B]
 	rankdir=LR
 }

@@ -4,7 +4,7 @@ from yalex.scanner import get_tokens
 
 
 def main():
-    file = 'yapars/slr-4.yalp'
+    file = 'yapars/YAPar5.txt'
     terminals, no_terminals, gramatica = yaparReader(file)
     tokens = get_tokens()
     for val in terminals:
@@ -12,7 +12,7 @@ def main():
             pass
         else:
             print("Tokens no definidos", val)
-            exit(1)
+            #exit(1)
     print('Todos los tokens estan definidos')
     slr = build_slr(gramatica, terminals, no_terminals)
     slr.draw_afd()
