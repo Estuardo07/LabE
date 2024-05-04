@@ -61,7 +61,7 @@ def delete_white_spaces2(string):
     return result
 
 
-def Yapar_reader(archivo):
+def yaparReader(archivo):
     with open(archivo, "r") as file:
         content = file.read()
 
