@@ -1,0 +1,60 @@
+// SLR
+digraph {
+	0 [label="expression' -> . expression
+expression -> . term PLUS expression
+expression -> . term
+term -> . TIMES term
+term -> .
+term -> . LPAREN expression RPAREN
+" shape=square]
+	1 [label="expression' -> expression .
+" shape=square]
+	2 [label="expression -> term . PLUS expression
+expression -> term .
+" shape=square]
+	3 [label="term -> TIMES . term
+term -> . TIMES term
+term -> .
+term -> . LPAREN expression RPAREN
+" shape=square]
+	4 [label="term -> LPAREN . expression RPAREN
+expression -> . term PLUS expression
+expression -> . term
+term -> . TIMES term
+term -> .
+term -> . LPAREN expression RPAREN
+" shape=square]
+	5 [label="expression -> term PLUS . expression
+expression -> . term PLUS expression
+expression -> . term
+term -> . TIMES term
+term -> .
+term -> . LPAREN expression RPAREN
+" shape=square]
+	6 [label="term -> TIMES term .
+" shape=square]
+	7 [label="term -> LPAREN expression . RPAREN
+" shape=square]
+	8 [label="expression -> term PLUS expression .
+" shape=square]
+	9 [label="term -> LPAREN expression RPAREN .
+" shape=square]
+	0 -> 1 [label=expression]
+	0 -> 2 [label=term]
+	0 -> 3 [label=TIMES]
+	0 -> 4 [label=LPAREN]
+	2 -> 5 [label=PLUS]
+	3 -> 6 [label=term]
+	3 -> 3 [label=TIMES]
+	3 -> 4 [label=LPAREN]
+	4 -> 7 [label=expression]
+	4 -> 2 [label=term]
+	4 -> 3 [label=TIMES]
+	4 -> 4 [label=LPAREN]
+	5 -> 8 [label=expression]
+	5 -> 2 [label=term]
+	5 -> 3 [label=TIMES]
+	5 -> 4 [label=LPAREN]
+	7 -> 9 [label=RPAREN]
+	rankdir=LR
+}
